@@ -1,1 +1,10 @@
-.github/**
+# Hidden Files
+*.csv
+README.md
+.git
+.github
+.gitignore
+
+
+
+
