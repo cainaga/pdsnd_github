@@ -28,8 +28,8 @@ def get_filters():
 
     # get user input for month (all, january, february, ... , june)
     while True:
-     month = input("Which month? January, February, March, April, May, June or all to skip the filtering by month. ")
-     if month in ("January", "February", "March", "April", "May", "June", "all"):
+     month = input("Which month? January, February, March, April, May, June or all to skip the filtering by month. ").casefold()
+     if month in ("january", "february", "march", "april", "may", "june", "all"):
         break
      else:
         print("Sorry, choose a month as it is written from the proposed list ")
@@ -72,7 +72,7 @@ def load_data(city, month, day):
     if month != 'all':
         
    # use the index of the months list to get the corresponding int
-        months = ['January', 'February', 'March', 'April', 'May', 'June']
+        months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
 
    # filter by month to create the new dataframe
