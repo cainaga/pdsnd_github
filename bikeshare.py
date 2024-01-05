@@ -19,7 +19,7 @@ def get_filters():
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
 
     while True:
-     city = input("Would you like to see data for Chicago, New York or Washington? ")
+     city = input("\nWould you like to see data for Chicago, New York or Washington?\n")
      city = city.lower()
      if city in ("chicago", "new york", "washington"):
         break
@@ -28,16 +28,16 @@ def get_filters():
 
     # get user input for month (all, january, february, ... , june)
     while True:
-     month = input("Which month? January, February, March, April, May, June or all to skip the filtering by month. ")
-     if month in ("January", "February", "March", "April", "May", "June", "all"):
+     month = input("\nWhich month? January, February, March, April, May, June or all to skip the filtering by month.\n").casefold()
+     if month in ("january", "february", "march", "april", "may", "june", "all"):
         break
      else:
         print("Sorry, choose a month as it is written from the proposed list ")
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-     day = input("Which day? Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or all to skip the filtering by day. ")
-     if day in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "all"):
+     day = input("\nWhich day? Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or all to skip the filtering by day.\n").casefold()
+     if day in ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "all"):
         break
      else:
         print("Sorry, choose a day as it is written from the proposed list ")
@@ -65,14 +65,14 @@ def load_data(city, month, day):
 
    # extract month, day of week and hour from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
-    df['day_of_week'] = df['Start Time'].dt.day_name()
+    df['day_of_week'] = df['Start Time'].dt.day_name().str.lower()
     df['hour'] = df['Start Time'].dt.hour
 
    # filter by month if applicable
     if month != 'all':
         
    # use the index of the months list to get the corresponding int
-        months = ['January', 'February', 'March', 'April', 'May', 'June']
+        months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
 
    # filter by month to create the new dataframe
@@ -191,7 +191,7 @@ def user_stats(df):
 def display_data(df):
     start_loc = 0
     while True:
-        view_data = input("Would you like to see 5 lines (more if applicable) of individual trip data? Type Yes or No. ").lower()
+        view_data = input("\nWould you like to see 5 lines (more if applicable) of individual trip data? Type Yes or No.\n").lower()
         if view_data != 'yes':
             break
 
