@@ -36,8 +36,8 @@ def get_filters():
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-     day = input("Which day? Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or all to skip the filtering by day. ")
-     if day in ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "all"):
+     day = input("Which day? Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or all to skip the filtering by day. ").casefold()
+     if day in ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "all"):
         break
      else:
         print("Sorry, choose a day as it is written from the proposed list ")
@@ -65,7 +65,7 @@ def load_data(city, month, day):
 
    # extract month, day of week and hour from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
-    df['day_of_week'] = df['Start Time'].dt.day_name()
+    df['day_of_week'] = df['Start Time'].dt.day_name().str.lower()
     df['hour'] = df['Start Time'].dt.hour
 
    # filter by month if applicable
