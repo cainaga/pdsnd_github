@@ -1,9 +1,9 @@
 
-### 05/01/2024
+# 05/01/2024
 
-### Explore US Bikeshare Data in python
+# US Bikeshare Data in python
 
-### Description
+## Description
 In this project, I developed a script in Python that take into consideration the data from a bike share system provider for many major cities in the United States, to uncover bike share usage patterns. I compared the system usage between three large cities: Chicago, New York City, and Washington, DC.
 
 **The Datasets**
@@ -39,12 +39,12 @@ counts of each user type
 counts of each gender (only available for NYC and Chicago)
 earliest, most recent, most common year of birth (only available for NYC and Chicago)
 
-### Files used
+## Files used
 bikeshare.py 
 chicago.csv
 new_york_city.csv
 washington.csv
 
-### Credits
+## Credits
 Project completed with the support of the materials in the Udaicty course: "Programming for Data Science with Python and Udacity GPT for code optimization, detecting typos and debugging asistance.
 
