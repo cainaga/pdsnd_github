@@ -19,7 +19,7 @@ def get_filters():
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
 
     while True:
-     city = input("Would you like to see data for Chicago, New York or Washington? ")
+     city = input("\nWould you like to see data for Chicago, New York or Washington?\n")
      city = city.lower()
      if city in ("chicago", "new york", "washington"):
         break
@@ -28,7 +28,7 @@ def get_filters():
 
     # get user input for month (all, january, february, ... , june)
     while True:
-     month = input("Which month? January, February, March, April, May, June or all to skip the filtering by month. ").casefold()
+     month = input("\nWhich month? January, February, March, April, May, June or all to skip the filtering by month.\n").casefold()
      if month in ("january", "february", "march", "april", "may", "june", "all"):
         break
      else:
@@ -36,7 +36,7 @@ def get_filters():
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-     day = input("Which day? Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or all to skip the filtering by day. ").casefold()
+     day = input("\nWhich day? Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or all to skip the filtering by day.\n").casefold()
      if day in ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "all"):
         break
      else:
@@ -191,7 +191,7 @@ def user_stats(df):
 def display_data(df):
     start_loc = 0
     while True:
-        view_data = input("Would you like to see 5 lines (more if applicable) of individual trip data? Type Yes or No. ").lower()
+        view_data = input("\nWould you like to see 5 lines (more if applicable) of individual trip data? Type Yes or No.\n").lower()
         if view_data != 'yes':
             break
 
